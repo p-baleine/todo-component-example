@@ -1,0 +1,1 @@
+module.exports = '<input type="text" name="new-item" autofocus />\n<ul class="container">\n</ul>\n';

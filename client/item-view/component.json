@@ -1,0 +1,17 @@
+{
+  "name": "item-view",
+  "description": "Item view component",
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*",
+    "solutionio/backbone": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "item-view.css"
+  ]
+}

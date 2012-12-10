@@ -1,0 +1,15 @@
+{
+  "name": "boot",
+  "description": "boot component",
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*",
+    "solutionio/backbone": "*"    
+  },
+  "development": {},
+  "paths": [".."],
+  "local": ["list-view"],
+  "scripts": [
+    "index.js"
+  ]
+}

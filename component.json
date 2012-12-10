@@ -1,0 +1,23 @@
+{
+  "name": "todo-component-example",
+  "repo": "p-baleine/todo-component-example",
+  "description": "Another Todo app example component",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "paths": ["client"],
+  "local": [
+    "boot",
+    "list-view",
+    "item-view"
+  ],
+  "styles": [
+    "todo-component-example.css"
+  ]
+}

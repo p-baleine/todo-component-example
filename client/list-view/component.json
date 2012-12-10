@@ -1,0 +1,19 @@
+{
+  "name": "list-view",
+  "description": "list view component",
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*",
+    "solutionio/backbone": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "paths": [".."],
+  "local": ["item-view"],
+  "styles": [
+    "list-view.css"
+  ]
+}

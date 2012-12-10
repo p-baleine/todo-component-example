@@ -1,0 +1,23 @@
+.item {
+    list-style: none;
+}
+
+.item .done {
+    float: left;
+}
+
+.item.editing .edit {
+    display: block;
+}
+
+.item.editing .view {
+    display: none;
+}
+
+.item .view {
+    display: block;
+}
+
+.item .edit {
+    display: none;
+}
