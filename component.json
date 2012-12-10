@@ -7,10 +7,6 @@
   "dependencies": {},
   "development": {},
   "license": "MIT",
-  "scripts": [
-    "index.js",
-    "template.js"
-  ],
   "paths": ["client"],
   "local": [
     "boot",

@@ -1,9 +1,6 @@
 
-build: components index.js todo-component-example.css template.js
+build: components todo-component-example.css
 	@component build --dev
-
-template.js: template.html
-	@component convert $<
 
 components: component.json
 	@component install --dev
