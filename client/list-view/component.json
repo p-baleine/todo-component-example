@@ -12,7 +12,7 @@
     "template.js"
   ],
   "paths": [".."],
-  "local": ["item-view"],
+  "local": ["item-view", "items"],
   "styles": [
     "list-view.css"
   ]

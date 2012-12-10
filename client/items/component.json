@@ -1,0 +1,12 @@
+{
+  "name": "items",
+  "description": "todo items component",
+  "dependencies": {
+    "component/underscore": "*",
+    "solutionio/backbone": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}

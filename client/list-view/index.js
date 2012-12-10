@@ -5,7 +5,8 @@
 
 var _ = require('underscore')
   , Backbone = require('backbone.js')
-  , ItemView = require('item-view');
+  , ItemView = require('item-view')
+  , Collection = require('items');
 
 /**
  * List view
@@ -48,23 +49,4 @@ var ListView = exports = module.exports = Backbone.View.extend({
   },
 
   template: _.template(require('./template'))
-});
-
-/**
- * Model
- */
-
-var Model = Backbone.Model.extend({
-  defaults: {
-    'done': false
-  }
-});
-
-/**
- * Collection
- */
-
-var Collection = Backbone.Collection.extend({
-  url: '/items',
-  model: Model
 });
