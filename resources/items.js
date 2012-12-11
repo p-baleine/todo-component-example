@@ -36,7 +36,7 @@ exports.create = function(req, res) {
 };
 
 /**
- * POST :id
+ * PUT :id
  */
 
 exports.update = function(req, res) {
@@ -49,6 +49,9 @@ exports.update = function(req, res) {
  */
 
 exports.destroy = function(req, res) {
-  var removed = items.splice(parseInt(req.params.item, 10), 1);
+  var id = Number(req.params.item)
+    , removed = items.splice(id, 1)
+    , i, l;
+  for (i = id, l = items.length; i < l; i++) { items[i].id--; }
   res.send(removed);
 };
