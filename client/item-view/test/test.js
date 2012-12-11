@@ -3,6 +3,7 @@ describe('item-view', function() {
 
   beforeEach(function() {
     this.model = new Backbone.Model({ title: 'hoge', done: false });
+    this.model.url = 'hoge';
     this.view = new ItemView({ model: this.model });
   });
 
@@ -71,7 +72,7 @@ describe('item-view', function() {
       this.saveSpy = sinon.spy(this.model, 'save');
       this.event = Backbone.$.Event('keydown');
       this.event.keyCode = this.event.which = 13;
-      this.view.$el.addClass('editing');
+      this.view.render().$el.addClass('editing');
       this.view.$('.edit').val('piyo').trigger(this.event);
     });
 
@@ -80,8 +81,23 @@ describe('item-view', function() {
     });
 
     it('should save its title', function() {
-      this.saveSpy.should.have.been.called;
       this.saveSpy.should.have.been.calledWith({ title: 'piyo' });
+    });
+  });
+
+  describe('when checkbox is checked', function() {
+    beforeEach(function() {
+      this.saveSpy = sinon.spy(this.model, 'save');
+      this.view.render().$('.done').attr('checked', true);
+      this.view.$('.done').change();
+    });
+
+    afterEach(function() {
+      this.model.save.restore();
+    });
+
+    it('should save its `done` state', function() {
+      this.saveSpy.should.have.been.calledWith({ done: true });
     });
   });
 });
