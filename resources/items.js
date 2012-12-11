@@ -39,7 +39,16 @@ exports.create = function(req, res) {
  * POST :id
  */
 
-exports.update= function(req, res) {
+exports.update = function(req, res) {
   var item = items[req.body.id] = req.body;
   res.send(item);
+};
+
+/**
+ * DELTE :id
+ */
+
+exports.destroy = function(req, res) {
+  var removed = items.splice(parseInt(req.params.item, 10), 1);
+  res.send(removed);
 };

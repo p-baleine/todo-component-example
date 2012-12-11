@@ -1,1 +1,1 @@
-module.exports = '<input class="done" type="checkbox" <% if (done) { %>\n  checked="checked"\n  <% } %> />\n\n<label class="view"><%- title %></label>\n<input class="edit" value="<%- title %>" />\n\n';
+module.exports = '<input class="done" type="checkbox" <% if (done) { %>\n  checked="checked"\n  <% } %> />\n\n<label class="view"><%- title %></label>\n<input class="edit" type="text" value="<%- title %>" />\n<a href="#" class="destroy">x</a>\n';

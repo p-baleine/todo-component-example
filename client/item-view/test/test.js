@@ -100,4 +100,25 @@ describe('item-view', function() {
       this.saveSpy.should.have.been.calledWith({ done: true });
     });
   });
+
+  describe('when `remove` button is clicked', function() {
+    beforeEach(function() {
+      this.destroySpy = sinon.spy(this.model, 'destroy');
+      this.removeSpy = sinon.spy(this.view.$el, 'remove');
+      this.view.render().$('.destroy').trigger('click');
+    });
+
+    afterEach(function() {
+      this.model.destroy.restore();
+      this.view.$el.remove.restore();
+    });
+
+    it('should destroy the item', function() {
+      this.destroySpy.should.have.been.called;
+    });
+
+    it('should be detached from body', function() {
+      this.removeSpy.should.have.been.called;
+    });
+  });
 });
