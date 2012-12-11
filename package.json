@@ -8,6 +8,7 @@
     "jade": "0.27.x"
   },
     "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "testacular": "0.4.0"
   }
 }
