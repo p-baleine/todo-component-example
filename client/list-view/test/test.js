@@ -3,16 +3,13 @@ describe('list-view', function() {
 
   before(function() {
     var self = this;
-    this.originalCollection = require.modules['items/index.js'];
     this.collection = new (Backbone.Collection.extend({ url: 'hoge' }));
-    require.register('items/index.js', function(module, exports, require) {
-      module.exports = function() { return self.collection; };
-    });
+    helper.componentMock.registerMock('items/index.js', function() { return self.collection; });
     ListView = require('list-view');
   });
 
   after(function() {
-    require.register('items/index.js', this.originalCollection);
+    helper.componentMock.deregisterMock('items/index.js');
   });
 
   describe('initialization', function() {
