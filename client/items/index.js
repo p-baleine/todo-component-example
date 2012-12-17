@@ -13,6 +13,10 @@ var _ = require('underscore')
 var Model = Backbone.Model.extend({
   defaults: {
     'done': false
+  },
+
+  validate: function(attrs) {
+    if (!attrs.title) { return 'enter title'; }
   }
 });
 

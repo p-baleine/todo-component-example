@@ -19,8 +19,9 @@ describe('items', function() {
   });
 
   describe('validation', function() {
-    it('should not save item who dose not have title attribute', function() {
-      this.collection = new Collection([{}]);
+    it('should not create item who dose not have title attribute', function() {
+      this.collection = new Collection();
+      this.collection.create({});
       this.collection.should.have.length(0);
     });
   });
