@@ -17,4 +17,11 @@ describe('items', function() {
     this.collection.should.have.length(1);
     this.collection.first().get('done').should.be.equal(false);
   });
+
+  describe('validation', function() {
+    it('should not save item who dose not have title attribute', function() {
+      this.collection = new Collection([{}]);
+      this.collection.should.have.length(0);
+    });
+  });
 });
