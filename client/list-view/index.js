@@ -19,6 +19,7 @@ var ListView = exports = module.exports = Backbone.View.extend({
   },
 
   initialize: function() {
+    _.bindAll(this, "alertError");
     this.collection = new Collection();
     this.collection.on('reset', this.renderList, this);
     this.collection.on('add', this.renderItem, this);
@@ -29,8 +30,8 @@ var ListView = exports = module.exports = Backbone.View.extend({
   create: function(e) {
     var title = this.$('[name=new-item]').val();
     if ((!e.keyCode || e.keyCode != 13) || (!e.which && e.which != 13)) { return; }
-    if (title === '') return;
-    this.collection.create({ title: title });
+    if (title === '') { return; }
+    this.collection.create({ title: title }, { error: this.alertError });
     this.$('[name=new-item]').val('');
   },
 
@@ -46,6 +47,10 @@ var ListView = exports = module.exports = Backbone.View.extend({
 
   renderItem: function(model) {
     this.$('ul').append((new ItemView({ model: model })).render().el);
+  },
+
+  alertError: function() {
+    alert(arguments);
   },
 
   template: _.template(require('./template'))

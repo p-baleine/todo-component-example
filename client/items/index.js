@@ -24,7 +24,7 @@ var Model = Backbone.Model.extend({
  * Collection
  */
 
-var Collection = exports = module.exports = Backbone.Collection.extend({
+var Collection = module.exports = Backbone.Collection.extend({
   url: '/items',
   model: Model
 });
