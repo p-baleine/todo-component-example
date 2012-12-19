@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "dependencies": {
+    "component": "0.10.x",
     "express": "3.0.x",
     "express-resource": "1.0.0",
     "jade": "0.27.x"

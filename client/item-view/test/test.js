@@ -1,5 +1,6 @@
 describe('item-view', function() {
-  var ItemView = require('item-view');
+  var should = chai.should()
+    , ItemView = require('item-view');
 
   beforeEach(function() {
     this.model = new Backbone.Model({ title: 'hoge', done: false });

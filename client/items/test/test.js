@@ -1,5 +1,6 @@
 describe('items', function() {
-  var Collection = require('items');
+  var should = chai.should()
+    , Collection = require('items');
 
   beforeEach(function() {
     this.collection = new Collection([{ title: 'hoge' }]);

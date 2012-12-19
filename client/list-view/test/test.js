@@ -1,5 +1,6 @@
 describe('list-view', function() {
-  var ListView;
+  var should = chai.should()
+    , ListView;
 
   before(function() {
     var self = this;
