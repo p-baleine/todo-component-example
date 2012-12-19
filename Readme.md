@@ -1,5 +1,5 @@
 
-# todo-component-example
+# todo-component-example [![Build Status](https://travis-ci.org/p-baleine/todo-component-example.png?branch=master)](https://travis-ci.org/p-baleine/todo-component-example)
 
   Another Todo app example component
 
