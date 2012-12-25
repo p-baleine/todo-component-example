@@ -8,4 +8,7 @@ components: component.json
 clean:
 	rm -fr build components template.js
 
+test:
+	./node_modules/.bin/testacular start
+
 .PHONY: clean
