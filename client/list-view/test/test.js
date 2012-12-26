@@ -1,6 +1,5 @@
 describe('list-view', function() {
-  var should = chai.should()
-    , ListView;
+  var ListView;
 
   before(function() {
     var self = this;
@@ -24,11 +23,11 @@ describe('list-view', function() {
     });
 
     it('should be an instance of Backbone.View', function() {
-      this.view.should.be.an.instanceof(Backbone.View);
+      expect(this.view).to.be.a(Backbone.View);
     });
 
     it('should fetch on instantiation', function() {
-      this.fetchSpy.should.have.been.called;
+      expect(this.fetchSpy.called).to.be.ok();
     });
   });
 
@@ -39,7 +38,7 @@ describe('list-view', function() {
     });
 
     it('should render items', function() {
-      this.view.$('.item').length.should.be.equal(2);
+      expect(this.view.$('.item')).to.have.length(2);
     });
   });
 
@@ -50,7 +49,7 @@ describe('list-view', function() {
     });
 
     it('should render items', function() {
-      this.view.$('.item').length.should.be.equal(1);
+      expect(this.view.$('.item')).to.have.length(1);
     });
   });
 });

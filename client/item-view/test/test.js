@@ -1,6 +1,5 @@
 describe('item-view', function() {
-  var should = chai.should()
-    , ItemView = require('item-view');
+  var ItemView = require('item-view');
 
   beforeEach(function() {
     this.model = new Backbone.Model({ title: 'hoge', done: false });
@@ -9,29 +8,26 @@ describe('item-view', function() {
   });
 
   it('should be an instance of Backbone.View', function() {
-    this.view.should.be.an.instanceof(Backbone.View);
+    expect(this.view).to.be.a(Backbone.View);
   });
 
   it('should have `item` as its class name', function() {
-    this.view.render().$el.should.have.class('item');
+    expect(this.view.render().$el.attr('class')).to.be.equal('item');
   });
 
   it('should have `li` as its tag name', function() {
-    this.view.render().el.tagName.should.be.eql('LI');
+    expect(this.view.render().el.tagName).to.be.equal('LI');
   });
 
   it('should render on `change` event of its model', function() {
     var self = this;
-    (function() {
-      return self.view.$('label').length;
-    }).should.change.from(0).to(1)
-        .when(function() {
-          self.model.trigger('change');
-        });
+    expect(this.view.$('label')).to.have.length(0);
+    this.model.trigger('change');
+    expect(this.view.$('label')).to.have.length(1);
   });
 
   it('should render title', function() {
-    this.view.render().$el.should.contain('hoge');
+    expect(this.view.render().$el.html()).to.match(/hoge/);
   });
 
   describe('`done` status', function() {
@@ -42,7 +38,7 @@ describe('item-view', function() {
       });
 
       it('should not check checkbox', function() {
-        this.view.render().$('[type=checkbox]').should.not.be.checked;
+        expect(this.view.render().$('[type=checkbox]').is(':checked')).to.not.be.ok();
       });
     });
 
@@ -53,7 +49,7 @@ describe('item-view', function() {
       });
 
       it('should not check checkbox', function() {
-        this.view.render().$('[type=checkbox]').should.be.checked;
+        expect(this.view.render().$('[type=checkbox]').is(':checked')).to.be.ok();
       });
     });
   });
@@ -64,7 +60,7 @@ describe('item-view', function() {
     });
 
     it('should be editable', function() {
-      this.view.$el.should.have.class('editing');
+      expect(this.view.$el.attr('class')).to.contain('editing');
     });
   });
 
@@ -82,7 +78,7 @@ describe('item-view', function() {
     });
 
     it('should save its title', function() {
-      this.saveSpy.should.have.been.calledWith({ title: 'piyo' });
+      expect(this.saveSpy.lastCall.args[0]).to.have.property('title', 'piyo');
     });
   });
 
@@ -98,7 +94,7 @@ describe('item-view', function() {
     });
 
     it('should save its `done` state', function() {
-      this.saveSpy.should.have.been.calledWith({ done: true });
+      expect(this.saveSpy.lastCall.args[0]).to.have.property('done', true);
     });
   });
 
@@ -115,11 +111,11 @@ describe('item-view', function() {
     });
 
     it('should destroy the item', function() {
-      this.destroySpy.should.have.been.called;
+      expect(this.destroySpy.called).to.be.ok();
     });
 
     it('should be detached from body', function() {
-      this.removeSpy.should.have.been.called;
+      expect(this.removeSpy.called).to.be.ok();
     });
   });
 });

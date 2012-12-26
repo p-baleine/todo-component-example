@@ -7,13 +7,8 @@ files = [
   MOCHA_ADAPTER,
   "build/build.js",
   "lib/mocha-setup.js",
-  "lib/sinon-1.5.0.js",
-  "lib/chai.js",
-  "lib/sinon-chai.js",
-  "lib/jquery-1.8.2.min.js",
-  "lib/chai-jquery.js",
-  "lib/chai-changes.js",
-  "lib/chai-backbone.js",
+  "lib/sinon-1.5.2.js",
+  "lib/expect.js",
   "lib/helper.js",
   "client/**/test/*.js"
 ];
