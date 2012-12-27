@@ -1,4 +1,3 @@
-
 /**
  * fixture
  */
@@ -52,6 +51,7 @@ exports.destroy = function(req, res) {
   var id = Number(req.params.item)
     , removed = items.splice(id, 1)
     , i, l;
+  // TODO do not change ids.
   for (i = id, l = items.length; i < l; i++) { items[i].id--; }
   res.send(removed);
 };
