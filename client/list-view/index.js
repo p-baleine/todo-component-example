@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -47,6 +46,7 @@ var ListView = exports = module.exports = Backbone.View.extend({
 
   renderItem: function(model) {
     this.$('ul').append((new ItemView({ model: model })).render().el);
+    return this;
   },
 
   alertError: function() {
